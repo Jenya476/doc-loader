@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@import "sass/css-reset"
+@import "sass/vars"
+
+html, body
+  width: 100%
+  height: 100%
+  -webkit-app-region: drag
+  -webkit-font-smoothing: antialiased
+
+.flex
+  flex: 1
+
+.visuallyhidden
+  border: 0
+  clip: rect(0 0 0 0)
+  clip-path: inset(50%)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px
+  white-space: nowrap
+
+.wrapper
+  width: 100%
+  max-width: 980px
+  margin: 0 auto
+  padding: 0 15px

@@ -1,0 +1,16 @@
+@import "src/styles"
+.doc-card
+  border-radius: 4px
+  box-shadow: 0 0 8px rgba($text-color, .4)
+  &__body
+    padding: 20px
+  &__item
+    display: block
+    border-bottom: 1px solid $separator-color
+    &:last-child
+      border-bottom: none
+  &__loader, &__empty
+    height: 300px
+    display: flex
+    align-self: center
+    justify-content: center

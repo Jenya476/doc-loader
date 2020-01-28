@@ -1,0 +1,116 @@
+@import "src/styles"
+.doc
+  position: relative
+  display: flex
+  align-items: center
+  padding: 20px 0
+  &:hover
+    .doc__more-btn
+      opacity: 1
+  &__face
+    width: 120px
+    display: flex
+    flex-direction: column
+    align-items: center
+    min-width: 0
+    text-align: center
+    padding: 0 4px
+    &-wrap
+      width: 20%
+      display: flex
+      justify-content: flex-start
+  &__icon
+    font-size: 56px
+    margin-bottom: 10px
+    color: $accent-color
+    &--lock
+      color: rgba($text-color, .5)
+  &__type
+    font: 500 13px/16px $main-font
+    color: rgba($text-color, .5)
+    margin-bottom: 10px
+    white-space: nowrap
+  &__link
+    font: 400 16px/20px $main-font
+    color: $accent-color
+    text-decoration: underline
+    transition: box-shadow .25s
+    &:focus
+      outline: none
+      box-shadow: 0 0 0 1px rgba($accent-color, .5)
+  &__body
+    width: 55%
+  &__title
+    font: 700 18px/22px $main-font
+    text-transform: uppercase
+    margin-bottom: 8px
+  &__desc
+    font: 400 14px/18px $main-font
+    color: rgba($text-color, .5)
+    margin-bottom: 16px
+  &__action
+    padding: 8px
+    min-width: 200px
+    font: 700 18px/22px $main-font
+    color: $bg-color
+    background-color: $accent-color
+    transition: background-color .25s
+    border-radius: 4px
+    cursor: pointer
+    &:hover
+      background-color: lighten($accent-color, 7)
+    &:focus
+      background-color: lighten($accent-color, 7)
+      outline: none
+    &:active
+      background-color: darken($accent-color, 4)
+    &[disabled]
+      background-color: $separator-color
+  &__progress
+    width: 25%
+    display: flex
+    flex-direction: column
+    align-items: center
+    .progress
+      display: block
+      +size(120px)
+      margin-bottom: 20px
+    &-steps
+      display: flex
+      justify-content: center
+    &-step
+      position: relative
+      display: flex
+      font-size: 24px
+      margin: 0 8px
+      color: rgba($text-color, .5)
+      &:after
+        content: ''
+        position: absolute
+        right: calc(100% - 2px)
+        top: 50%
+        transform: translateY(-50%)
+        width: 20px
+        height: 2px
+        background-color: rgba($text-color, .5)
+      &:first-child
+        &:after
+          display: none
+      &--done
+        color: $accent-color
+        &:after
+          background-color: $accent-color
+    .progress-bar
+      stroke: #008694
+      stroke-linecap: round
+      transition: stroke-dashoffset 700ms ease
+      animation: strokeColor 1200ms linear infinite
+      stroke-dashoffset: 20
+  &__more-btn
+    position: absolute
+    top: 20px
+    right: 0
+    font-size: 32px
+    color: rgba($text-color, .5)
+    opacity: 0
+    transition: opacity .25s

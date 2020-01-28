@@ -1,0 +1,10 @@
+<div class="doc-card" [ngSwitch]="docService.state">
+  <app-tabs [(activeTab)]="activeTab" (activeTabChange)="changeFilter($event)" [tabs]="tabs"></app-tabs>
+  <div class="doc-card__body" *ngSwitchCase="'Data'">
+    <app-doc-item class="doc-card__item" [doc]="doc" *ngFor="let doc of docs"></app-doc-item>
+  </div>
+
+  <app-loader class="doc-card__loader" *ngSwitchCase="'Loading'"></app-loader>
+
+  <div class="doc-card__empty" *ngSwitchCase="'Empty'">No docs</div>
+</div>

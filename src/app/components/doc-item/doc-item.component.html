@@ -1,0 +1,39 @@
+<div class="doc">
+  <div class="doc__face-wrap">
+    <div class="doc__face">
+      <ng-container *ngIf="!doc.isLock">
+        <div class="doc__icon"><i class="material-icons">description</i></div>
+        <p class="doc__type">{{doc.docType}}</p>
+        <a href="{{doc.link}}" target="_blank" class="doc__link">View Doc</a>
+      </ng-container>
+      <ng-container *ngIf="doc.isLock">
+        <div *ngIf="doc.isLock" class="doc__icon doc__icon--lock"><i class="material-icons">lock</i></div>
+        <p class="doc__type">Lock</p>
+      </ng-container>
+    </div>
+  </div>
+  <div class="doc__body">
+    <h2 class="doc__title">{{doc.title}}</h2>
+    <p class="doc__desc">{{doc.description}}</p>
+    <button class="doc__action">Download</button>
+  </div>
+  <div class="doc__progress">
+    <app-progress class="progress" [progress]="doc.completion"></app-progress>
+
+    <div class="doc__progress-steps">
+      <div class="doc__progress-step" [ngClass]="{'doc__progress-step--done': doc.completion >= 33.33}">
+        <i class="material-icons">check_circle</i>
+      </div>
+      <div class="doc__progress-step" [ngClass]="{'doc__progress-step--done': doc.completion >= 66.66}">
+        <i class="material-icons">check_circle</i>
+      </div>
+      <div class="doc__progress-step" [ngClass]="{'doc__progress-step--done': doc.completion === 100}">
+        <i class="material-icons">check_circle</i>
+      </div>
+    </div>
+  </div>
+
+  <button class="doc__more-btn">
+    <i class="material-icons">more_vert</i>
+  </button>
+</div>

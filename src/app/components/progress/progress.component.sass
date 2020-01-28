@@ -1,0 +1,32 @@
+@import "src/styles"
+.progress
+  position: relative
+  +size(100%)
+  &__circle
+    +size(100%)
+    transform: rotate(-90deg)
+  &__meter
+    stroke-width: 3px
+    fill: none
+    stroke: rgba($text-color, .5)
+  &__value
+    fill: none
+    stroke-width: 5px
+    stroke-linecap: round
+  &__data
+    position: absolute
+    top: 0
+    left: 0
+    +size(100%)
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+  &__value
+    font: 700 18px/20px $main-font
+    margin-bottom: 3px
+  &__percent
+    font: 400 12px/16px $main-font
+  &__text
+    font: 400 14px/16px $main-font
+    color: rgba($text-color, .5)

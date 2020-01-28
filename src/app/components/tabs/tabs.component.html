@@ -1,0 +1,7 @@
+<div class="tabs" role="tablist">
+  <button (click)="onTabChange(i)"
+          role="tab"
+          class="tab text__menu"
+          [ngClass]="{'text__menu--active': i === activeTab}"
+          *ngFor="let tab of tabs; let i = index">{{tab}}</button>
+</div>
